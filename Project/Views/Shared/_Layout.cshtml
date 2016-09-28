@@ -5,7 +5,6 @@
     <title>23333</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/js")
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <style>
@@ -17,7 +16,7 @@
 
 <!-- Navbar -->
 <div class="w3-top">
-    <img style="height: 80px;width: 100%" src="~/Content/Images/header.png"/>
+    <img style="height: 80px; width: 100%" src="~/Content/Images/header.png"/>
 </div>
 
 <!-- Page Container -->
@@ -36,7 +35,7 @@
         </div>
 
         <!-- Middle Column -->
-        <div class="w3-col m6">
+        <div class="w3-col m6" id="content">
             @RenderBody()
         </div>
 
@@ -61,6 +60,6 @@
 </footer>
 
 </body>
-
+@Scripts.Render("~/bundles/js")
 @Scripts.Render("~/bundles/jsx")
 </html>

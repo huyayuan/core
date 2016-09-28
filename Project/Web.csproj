@@ -245,7 +245,8 @@
     <Content Include="Content\Css\Site.css" />
     <Content Include="Content\Css\w3.css" />
     <None Include="Properties\PublishProfiles\23333.pubxml" />
-    <Content Include="Scripts\Jsx\Tutorial.jsx" />
+    <Content Include="Scripts\Jsx\Box.jsx" />
+    <Content Include="Scripts\Jsx\BoxList.jsx" />
     <None Include="Scripts\Js\jquery-1.8.2.intellisense.js" />
     <Content Include="Content\Images\header.png" />
     <Content Include="Scripts\Js\jquery-1.8.2.js" />
