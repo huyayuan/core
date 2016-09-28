@@ -2,7 +2,7 @@
   render: function() {
     return (
       <div className="commentBox">
-        Hello, world! I am a CommentBox.
+        Hello, world! I am a CommentBox. aaaa
       </div>
     );
   }

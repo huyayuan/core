@@ -174,8 +174,8 @@
     <Content Include="Scripts\Js\react-15.0.1.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\fontAwesome.min.css" />
-    <Content Include="Content\fonts.css" />
+    <Content Include="Content\Css\fontAwesome.min.css" />
+    <Content Include="Content\Css\fonts.css" />
     <Content Include="Content\Images\Logo.jpg" />
     <Content Include="Content\Images\demo.gif" />
     <Content Include="Content\Images\demo2.gif" />
@@ -240,10 +240,10 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Content\w3-theme-deep-orange.css" />
+    <Content Include="Content\Css\w3-theme-deep-orange.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Content\w3.css" />
+    <Content Include="Content\Css\Site.css" />
+    <Content Include="Content\Css\w3.css" />
     <None Include="Properties\PublishProfiles\23333.pubxml" />
     <Content Include="Scripts\Jsx\Tutorial.jsx" />
     <None Include="Scripts\Js\jquery-1.8.2.intellisense.js" />

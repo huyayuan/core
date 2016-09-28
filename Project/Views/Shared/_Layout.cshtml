@@ -1,14 +1,12 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <title>23333</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="~/Content/w3.css">
-    <link rel="stylesheet" href="~/Content/w3-theme-deep-orange.css">
-    <link rel='stylesheet' href='~/Content/fonts.css'>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/js")
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <script src="~/Scripts/Js/react-15.0.1.js"></script>
-    <script src="~/Scripts/Js/react-dom-15.0.1.js"></script>
 </head>
 <style>
     html, body, h1, h2, h3, h4, h5 {
@@ -17,59 +15,52 @@
 </style>
 <body class="w3-theme-l5">
 
-    <!-- Navbar -->
-    <div class="w3-top">
-        <img style="height: 80px" src="~/Content/Images/header.png" />
-    </div>
+<!-- Navbar -->
+<div class="w3-top">
+    <img style="height: 80px;width: 100%" src="~/Content/Images/header.png"/>
+</div>
 
-    <!-- Page Container -->
-    <div class="w3-container w3-content" style="max-width: 1400px; margin-top: 80px">
-        <!-- The Grid -->
-        <div class="w3-row">
-            <!-- Left Column -->
-            <div class="w3-col m3">
-                <!-- Profile -->
-                <div class="w3-card-2 w3-round w3-white">
-                    <div class="w3-container">
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width: 1400px; margin-top: 80px">
+    <!-- The Grid -->
+    <div class="w3-row">
+        <!-- Left Column -->
+        <div class="w3-col m3">
+            <!-- Profile -->
+            <div class="w3-card-2 w3-round w3-white">
+                <div class="w3-container">
 
-                    </div>
                 </div>
-
-                <!-- End Left Column -->
             </div>
 
-            <!-- Middle Column -->
-            <div class="w3-col m6">
-                @RenderBody()
-
-                <!-- End Middle Column -->
-            </div>
-
-            <!-- Right Column -->
-            <div class="w3-col m3">
-                <div class="w3-card-2 w3-round w3-white w3-center">
-                    <div class="w3-container">
-                        <div id="content"></div>
-                    </div>
-                </div>
-
-
-                <!-- End Right Column -->
-            </div>
-
-            <!-- End Grid -->
         </div>
 
-        <!-- End Page Container -->
-    </div>
-    <br>
+        <!-- Middle Column -->
+        <div class="w3-col m6">
+            @RenderBody()
+        </div>
 
-    <!-- Footer -->
-    <footer class="w3-container w3-theme-d3 w3-padding-16">
-        <h5>Footer</h5>
-    </footer>
-    <script src="@Url.Content("~/Scripts/Jsx/Tutorial.jsx")"></script>
+        <!-- Right Column -->
+        <div class="w3-col m3">
+            <div class="w3-card-2 w3-round w3-white w3-center">
+                <div class="w3-container">
+                </div>
+            </div>
+        </div>
+
+        <!-- End Grid -->
+    </div>
+
+    <!-- End Page Container -->
+</div>
+<br>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-d3 w3-padding-16">
+    <h5>Footer</h5>
+</footer>
+
 </body>
 
-
+@Scripts.Render("~/bundles/jsx")
 </html>
