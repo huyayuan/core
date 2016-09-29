@@ -5194,11 +5194,13 @@ ReactComponent.prototype.isReactComponent = {};
  *
  * @param {object|function} partialState Next partial state or function to
  *        produce next partial state to be merged with current state.
- * @param {?function} callback Called after state is updated.
  * @final
  * @protected
  */
-ReactComponent.prototype.setState = function (partialState, callback) {
+ReactComponent.prototype.setState = function (partialState
+  :
+  Object
+  ) {
   !(typeof partialState === 'object' || typeof partialState === 'function' || partialState == null) ? "development" !== 'production' ? invariant(false, 'setState(...): takes an object of state variables to update or a ' + 'function which returns an object of state variables.') : invariant(false) : void 0;
   if ("development" !== 'production') {
     ReactInstrumentation.debugTool.onSetState();

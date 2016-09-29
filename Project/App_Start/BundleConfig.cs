@@ -10,7 +10,8 @@ namespace Project
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
                         "~/Scripts/Js/jquery-{version}.js",
                         "~/Scripts/Js/react-15.0.1.js",
-                        "~/Scripts/Js/react-dom-15.0.1.js"));
+                        "~/Scripts/Js/react-dom-15.0.1.js",
+                        "~/Scripts/Js/lodash.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/Css/*.css"));

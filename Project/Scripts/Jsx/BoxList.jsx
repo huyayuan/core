@@ -1,18 +1,21 @@
 ﻿var BoxList = React.createClass({
-	
+	getInitialState: function() {
+		return {boxList: []};
+	},
 	componentDidMount: function() {
 		$.ajax({
 			url: "home/getdata", success: function (data) {
-
-			}
+				this.setState({boxList:data});
+			}.bind(this)
 		});
 	},
   render: function() {
+	 var boxList = _.map(this.state.boxList, function(box){
+		 return <Box data={box} />
+	 });
     return (
 	<div>
-			<Box data= />
-			<Box />
-			<Box />
+		{boxList}
 	</div>
     );
   }

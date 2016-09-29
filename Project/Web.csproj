@@ -171,6 +171,7 @@
     </Compile>
     <Compile Include="Models\Box.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Scripts\Js\lodash.js" />
     <Content Include="Scripts\Js\react-dom-15.0.1.js" />
     <Content Include="Scripts\Js\react-15.0.1.js" />
   </ItemGroup>
@@ -265,6 +266,7 @@
     <Content Include="Scripts\Js\knockout-2.2.0.js" />
     <Content Include="Scripts\Js\modernizr-2.6.2.js" />
     <Content Include="Scripts\Js\_references.js" />
+    <None Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
