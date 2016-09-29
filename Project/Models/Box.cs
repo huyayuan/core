@@ -13,5 +13,6 @@ namespace Project.Models
 
         public string Comments { get; set; }
         public string Rate { get; set; }
+        public string Id { get; set; }
     }
 }

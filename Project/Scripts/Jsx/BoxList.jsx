@@ -11,7 +11,7 @@
 	},
   render: function() {
 	 var boxList = _.map(this.state.boxList, function(box){
-		 return <Box data={box} />
+		 return <Box key={box.Id} data={box} />
 	 });
     return (
 	<div>

@@ -17,26 +17,29 @@ namespace Project.Controllers
             {
                 new Box()
                 {
+                    Id = "1",
                     Title =
                         "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     Comments = "Lorem ipsum dolor sit amet, consectetur adipiscing elit ...",
-                    Url = "Content/Images/img_lights.jpg",
+                    Url = @"Content/Images/img_lights.jpg",
                     Rate = "3.4万"
                 },
                 new Box()
                 {
+                    Id = "2",
                     Title =
                         "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     Comments = "Lorem ipsum dolor sit amet, consectetur adipiscing elit ...",
-                    Url = "Content/Images/img_lights.jpg",
+                    Url = @"Content/Images/img_lights.jpg",
                     Rate = "3.4万"
                 },
                 new Box()
                 {
+                    Id = "3",
                     Title =
                         "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     Comments = "Lorem ipsum dolor sit amet, consectetur adipiscing elit ...",
-                    Url = "Content/Images/img_lights.jpg",
+                    Url = @"Content/Images/img_lights.jpg",
                     Rate = "3.4万"
                 },
             };
