@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 using Project.Models;
 
 namespace Project.Controllers
@@ -13,41 +14,11 @@ namespace Project.Controllers
 
         public ActionResult GetData()
         {
-            var result = new List<Box>
-            {
-                new Box()
-                {
-                    Id = "1",
-                    Title =
-                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    Comments = "Lorem ipsum dolor sit amet, consectetur adipiscing elit ...",
-                    Url = @"Content/Images/img_lights.jpg",
-                    Rate = "3.4万"
-                },
-                new Box()
-                {
-                    Id = "2",
-                    Title =
-                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    Comments = "Lorem ipsum dolor sit amet, consectetur adipiscing elit ...",
-                    Url = @"Content/Images/img_lights.jpg",
-                    Rate = "3.4万"
-                },
-                new Box()
-                {
-                    Id = "3",
-                    Title =
-                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    Comments = "Lorem ipsum dolor sit amet, consectetur adipiscing elit ...",
-                    Url = @"Content/Images/img_lights.jpg",
-                    Rate = "3.4万"
-                },
-            };
-
+            var data = System.IO.File.ReadAllText(HttpContext.Server.MapPath("~/Data/BoxList.json"));
 
             return new JsonResult()
             {
-                Data = result,
+                Data = JsonConvert.DeserializeObject<List<Box>>(data),
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }

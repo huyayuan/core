@@ -246,6 +246,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Css\Site.css" />
     <Content Include="Content\Css\w3.css" />
+    <Content Include="Data\BoxList.json" />
     <None Include="Properties\PublishProfiles\23333.pubxml" />
     <Content Include="Scripts\Jsx\Box.jsx" />
     <Content Include="Scripts\Jsx\BoxList.jsx" />
@@ -266,7 +267,6 @@
     <Content Include="Scripts\Js\knockout-2.2.0.js" />
     <Content Include="Scripts\Js\modernizr-2.6.2.js" />
     <Content Include="Scripts\Js\_references.js" />
-    <None Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -280,9 +280,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
