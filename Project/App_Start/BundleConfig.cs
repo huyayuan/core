@@ -12,11 +12,11 @@ namespace Project
                         "~/Scripts/Js/react-15.0.1.js",
                         "~/Scripts/Js/react-dom-15.0.1.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jsx").Include(
-            "~/Scripts/Jsx/*.jsx"));
-
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/Css/*.css"));
+
+            bundles.Add(new Bundle("~/bundles/jsx", new JsMinify()).Include(
+                        "~/Scripts/Jsx/*.jsx"));
         }
     }
 }

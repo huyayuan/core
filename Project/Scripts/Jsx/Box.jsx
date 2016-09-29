@@ -1,4 +1,5 @@
 ﻿var Box = React.createClass({
+
   render: function() {
     return (
         <div className="w3-container w3-card-2 w3-white w3-round w3-margin">
