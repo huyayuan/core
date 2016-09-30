@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Project.Models
+﻿namespace Project.Models
 {
     public class Box
     {
@@ -14,5 +9,7 @@ namespace Project.Models
         public string Comments { get; set; }
         public string Rate { get; set; }
         public string Id { get; set; }
+
+        public BoxType Type { get; set; }
     }
 }

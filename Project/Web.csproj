@@ -170,6 +170,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Box.cs" />
+    <Compile Include="Models\BoxType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Content\Images\header.jpg" />
     <Content Include="Scripts\Js\lodash.js" />
