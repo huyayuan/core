@@ -5,3 +5,22 @@
 body {
     background-color:#f3f3f3
 }
+
+.width-100{
+    width:100%;
+}
+
+.header-color{
+    background-color:#fad61f;
+    height:80px
+}
+
+.logo{
+    display: block;
+    height: 79px;
+    width: 207px;
+    text-indent: -999999px;
+    background-position: 0 0;
+    background-image:url('../Images/logo_temp.png');
+    margin-left:20%
+}
