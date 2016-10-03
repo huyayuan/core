@@ -12,15 +12,13 @@ namespace Project.Controllers
 
         public ActionResult GetData()
         {
-           var result = BoxListReader.GetData(HttpContext.Server.MapPath("~/Data/BoxList.csv"));
-
             return new JsonResult()
             {
-                Data = result,
+                Data = DataCache.Data,
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
 
-       
+
     }
 }

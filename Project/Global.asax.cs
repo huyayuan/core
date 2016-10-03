@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.Biz;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,6 +23,8 @@ namespace Project
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            DataCache.Data =  BoxListReader.GetData(HttpContext.Current.Server.MapPath("~/Data/BoxList.csv"));
         }
     }
 }
