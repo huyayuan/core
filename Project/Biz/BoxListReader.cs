@@ -31,6 +31,7 @@ namespace Project.Biz
                         Rate = RemoveQuotes(dataList[2]),
                         Url = RemoveQuotes(dataList[3])
                     };
+
                     result.Add(box);
                     str = sr.ReadLine();
                 }
@@ -38,8 +39,15 @@ namespace Project.Biz
                 sr.Close();
             }
 
-            result = result.Where(t => Convert.ToInt32(t.Rate) > 10000).OrderBy(t => t.Rate).ToList();
+            result = result.Where(t=>Convert.ToInt32(t.Rate) > 10000).OrderBy(t => Convert.ToInt32(t.Rate)).ToList();
+            result.ForEach(t => t.Rate = Round(t.Rate));
+
             return result;
+        }
+
+        private static string Round(string rate)
+        {
+            return rate.Substring(0, rate.Length - 4) + "." + rate[rate.Length - 4] + "万";
         }
 
         private static string RemoveQuotes(string original)
