@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Project.Biz;
 using System.Web.Mvc;
-using Newtonsoft.Json;
-using Project.Models;
 
 namespace Project.Controllers
 {
@@ -14,13 +12,15 @@ namespace Project.Controllers
 
         public ActionResult GetData()
         {
-            var data = System.IO.File.ReadAllText(HttpContext.Server.MapPath("~/Data/BoxList.json"));
+           var result = BoxListReader.GetData(HttpContext.Server.MapPath("~/Data/BoxList.csv"));
 
             return new JsonResult()
             {
-                Data = JsonConvert.DeserializeObject<List<Box>>(data),
+                Data = result,
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
+
+       
     }
 }
