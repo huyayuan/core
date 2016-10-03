@@ -10,6 +10,14 @@
             }
         };
     },
+    getInitialState: function () {
+        return { isRated: false };
+    },
+
+    onClick: function()
+    {
+        this.setState({ isRated: true });
+    },
     render: function () {
 
         var img = null;
@@ -26,6 +34,12 @@
             </div>);
         }
 
+        var rateClassName = "fa fa-thumbs-o-up";
+        if (this.state.isRated)
+        {
+            rateClassName = "fa fa-thumbs-up";
+        }
+
         return (
         <div className="w3-container w3-card-2 w3-white w3-round w3-margin">
           <br />
@@ -35,7 +49,7 @@
                 <p>{this.props.data.Title}</p>
             {img}
             {comments}
-                  <button type="button" className="w3-btn w3-theme-d1 w3-margin-bottom"><i className="fa fa-thumbs-up"></i> {this.props.data.Rate} </button>
+                  <button type="button" className="w3-btn w3-theme-d1 w3-margin-bottom" onClick={this.onClick}><i className={rateClassName}></i> {this.props.data.Rate} </button>
         </div>
     );
     }
