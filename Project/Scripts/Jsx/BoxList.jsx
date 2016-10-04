@@ -10,6 +10,7 @@
         });
     },
     onClick: function () {
+        this.setState({ boxList: [] });
         $.ajax({
             url: "home/getdata", success: function (data) {
                 this.setState({ boxList: data });

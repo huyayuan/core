@@ -17,7 +17,7 @@ namespace Project.Controllers
 
             return new JsonResult()
             {
-                Data = DataCache.Data[random.Next(0, 2)],
+                Data = DataCache.Data[random.Next(0, DataCache.Data.Count - 1)],
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }

@@ -254,6 +254,9 @@
     <Content Include="Data\BoxList20161004.csv" />
     <Content Include="Data\BoxList20161003.csv" />
     <Content Include="Data\BoxList20161002.csv" />
+    <Content Include="Data\BoxList20161001.csv" />
+    <Content Include="Data\BoxList20161005.csv" />
+    <Content Include="Data\BoxList20161006.csv" />
     <None Include="Properties\PublishProfiles\23333 %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\23333.pubxml" />
     <Content Include="Scripts\Jsx\Box.jsx" />
