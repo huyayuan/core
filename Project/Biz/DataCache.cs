@@ -8,6 +8,6 @@ namespace Project.Biz
 {
     public static class DataCache
     {
-        public static List<Box> Data { get; set; }
+        public static Dictionary<int, List<Box>> Data = new Dictionary<int, List<Box>>();
     }
 }

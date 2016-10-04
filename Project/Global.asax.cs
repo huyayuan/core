@@ -24,7 +24,9 @@ namespace Project
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            DataCache.Data =  BoxListReader.GetData(HttpContext.Current.Server.MapPath("~/Data/BoxList.csv"));
+            DataCache.Data.Add(0, BoxListReader.GetData(HttpContext.Current.Server.MapPath("~/Data/BoxList20161002.csv")));
+            DataCache.Data.Add(1, BoxListReader.GetData(HttpContext.Current.Server.MapPath("~/Data/BoxList20161003.csv")));
+            DataCache.Data.Add(2, BoxListReader.GetData(HttpContext.Current.Server.MapPath("~/Data/BoxList20161004.csv")));
         }
     }
 }

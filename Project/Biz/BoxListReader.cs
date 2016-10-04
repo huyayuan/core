@@ -40,7 +40,20 @@ namespace Project.Biz
             }
 
             result = result.Where(t=>Convert.ToInt32(t.Rate) > 10000).OrderBy(t => Convert.ToInt32(t.Rate)).ToList();
-            result.ForEach(t => t.Rate = Round(t.Rate));
+            result.ForEach(t =>
+            {
+                t.Rate = Round(t.Rate);
+                if(string.IsNullOrWhiteSpace(t.Comments))
+                {
+                    t.Comments = "...";
+                }
+
+                if(string.IsNullOrWhiteSpace(t.Title))
+                {
+                    t.Title = "...";
+                }
+            }
+            );
 
             return result;
         }

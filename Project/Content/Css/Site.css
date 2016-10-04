@@ -24,3 +24,15 @@ body {
     background-image:url('../Images/logo_temp.png');
     margin-left:20%
 }
+
+.text-center{
+    text-align:center
+}
+
+#change-content{
+    padding:0;
+}
+
+#change-content button{
+    width:100%
+}
