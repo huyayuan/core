@@ -13,52 +13,55 @@
     }
 </style>
 <body class="w3-theme-l5">
-<!-- Navbar -->
-<div class="w3-top header-color">
-    <a class="logo" href="/"></a>
-</div>
+    <!-- Navbar -->
+    <div class="w3-top header-color">
+        <a class="logo" href="/"></a>
+    </div>
 
-<!-- Page Container -->
-<div class="w3-container w3-content" style="max-width: 1400px; margin-top: 80px; min-height:990px">
-    <!-- The Grid -->
-    <div class="w3-row">
-        <!-- Left Column -->
-        <div class="w3-col m3">
-            <!-- Profile -->
-            <div class="w3-card-2 w3-round w3-white">
-                <div class="w3-container">
-                    <div style="height:1px">
+    <!-- Page Container -->
+    <div class="w3-container w3-content" style="max-width: 1400px; margin-top: 80px; min-height:990px">
+        <!-- The Grid -->
+        <div class="w3-row">
+            <!-- Left Column -->
+            <div class="w3-col m3">
+                <!-- Profile -->
+                <div class="w3-card-2 w3-round w3-white">
+                    <div class="w3-container">
+                        <div style="height:1px">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Middle Column -->
-        <div class="w3-col m5" id="content">
-            @RenderBody()
-        </div>
+            <!-- Middle Column -->
+            <div class="w3-col m5" id="content">
+                @RenderBody()
+            </div>
 
-        <!-- Right Column -->
-        <div class="w3-col m3">
-            <div class="w3-card-2 w3-round w3-white w3-center">
-                <div class="w3-container">
+            <!-- Right Column -->
+            <div class="w3-col m3">
+                <div class="w3-card-2 w3-round w3-white w3-center">
+                    <div class="w3-container">
+
+                    </div>
                 </div>
             </div>
+
+            <!-- End Grid -->
         </div>
 
-        <!-- End Grid -->
+        <!-- End Page Container -->
     </div>
+    <br>
 
-    <!-- End Page Container -->
-</div>
-<br>
-
-<!-- Footer -->
-<footer class="w3-container w3-orange w3-padding-16" style="text-align:center">
+    <!-- Footer -->
+    <footer class="w3-container w3-orange w3-padding-16" style="text-align:center">
         <div style="font-size:12px;color:white">联系方式:  ilove23333@163.com</div>
-</footer>
+    </footer>
 
 </body>
 @Scripts.Render("~/bundles/js")
 @Scripts.Render("~/bundles/jsx")
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"快來23333，有猛料！！！","bdMini":"1","bdMiniList":["tsina","weixin","sqq","tqq","tqf","youdao","qzone","copy"],"bdPic":"http://p3.pstatp.com/large/ec60003408b0bbb25c0","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"0","bdPos":"right","bdTop":"250"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"我要分享到：~~","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 </html>
