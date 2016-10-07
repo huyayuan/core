@@ -1,19 +1,20 @@
 ﻿var BoxList = React.createClass({
     getInitialState: function () {
-        return { boxList: [] };
+        return { boxList: [], index: 0};
     },
     componentDidMount: function () {
         $.ajax({
-            url: "home/getdata", success: function (data) {
+            url: "home/getdata?index=0", success: function (data) {
                 this.setState({ boxList: data });
             }.bind(this)
         });
     },
     onClick: function () {
         this.setState({ boxList: [] });
+        var index = this.state.index + 1;
         $.ajax({
-            url: "home/getdata", success: function (data) {
-                this.setState({ boxList: data });
+            url: "home/getdata?index=" + index, success: function (data) {
+                this.setState({ boxList: data, index });
             }.bind(this)
         });
     },
@@ -25,7 +26,7 @@
 	<div>
 	    {boxList}
         <div id="change-content" className="w3-container w3-card-2 w3-white w3-round">
-             <button onClick={this.onClick} className="w3-btn w3-white text-center">换一批</button>
+             <button onClick={this.onClick} className="w3-btn w3-white text-center"><i className="fa fa-refresh"></i></button>
         </div>
 	</div>
     );

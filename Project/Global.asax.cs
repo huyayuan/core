@@ -26,7 +26,7 @@ namespace Project
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             var dataPath = HttpContext.Current.Server.MapPath("~/Data/");
-            var filesName = Directory.EnumerateFiles(HttpContext.Current.Server.MapPath("~/Data/"));
+            var filesName = Directory.EnumerateFiles(HttpContext.Current.Server.MapPath("~/Data/")).OrderByDescending(t=>t);
             int index = 0;
             foreach(var fileName in filesName)
             {

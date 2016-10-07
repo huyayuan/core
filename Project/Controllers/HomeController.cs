@@ -10,14 +10,14 @@ namespace Project.Controllers
         {
             return View();
         }
-
-        public ActionResult GetData()
+        
+        public ActionResult GetData(int index = 0)
         {
             Random random = new Random(DateTime.Now.Millisecond);
-
+            index = index % DataCache.Data.Count;
             return new JsonResult()
             {
-                Data = DataCache.Data[random.Next(0, DataCache.Data.Count - 1)],
+                Data = DataCache.Data[index],
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
