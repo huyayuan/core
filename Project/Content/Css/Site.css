@@ -37,3 +37,7 @@ body {
 #change-content button{
     width:100%
 }
+
+.min-height{
+    min-height:600px
+}

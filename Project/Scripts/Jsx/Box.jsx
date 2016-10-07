@@ -41,7 +41,7 @@
         }
 
         return (
-        <div className="w3-container w3-card-2 w3-white w3-round w3-margin">
+        <div className="w3-container w3-card-2 w3-white w3-round w3-margin min-height">
           <br />
             <img src="Content/Images/Logo.jpg" alt="Avatar" className="w3-left w3-circle w3-margin-right" style={{width: 60}} />
               <h4>高能楼主</h4><br />
