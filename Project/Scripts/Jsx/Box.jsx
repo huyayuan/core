@@ -27,13 +27,12 @@
         }
         var comments = null;
         if (this.props.data.Comments) {
-            comments = (<div className="w3-panel w3-pale-yellow w3-topbar w3-bottombar w3-border-yellow">
+            comments = (<div className="w3-panel w3-topbar w3-bottombar comments">
                     <p>
                         {this.props.data.Comments}
                     </p>
             </div>);
         }
-
         var rateClassName = "fa fa-thumbs-o-up";
         if (this.state.isRated)
         {
