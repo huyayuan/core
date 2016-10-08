@@ -1,4 +1,5 @@
 ﻿using Project.Biz;
+using Project.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,10 +28,15 @@ namespace Project
 
             var dataPath = HttpContext.Current.Server.MapPath("~/Data/");
             var filesName = Directory.EnumerateFiles(HttpContext.Current.Server.MapPath("~/Data/")).OrderByDescending(t=>t);
-            int index = 0;
-            foreach(var fileName in filesName)
+            List<Box> allData = new List<Box>();
+            foreach (var fileName in filesName)
             {
-                DataCache.Data.Add(index++, BoxListReader.GetData(fileName));
+                allData.AddRange(BoxListReader.GetData(fileName));
+            }
+
+            for(int index=0;index < allData.Count / 12; index++)
+            {
+                DataCache.Data.Add(index, allData.Skip(index * 12).Take(12).OrderBy(t=>t.Rate).ToList());
             }
         }
     }

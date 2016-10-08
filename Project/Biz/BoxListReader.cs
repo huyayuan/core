@@ -39,7 +39,7 @@ namespace Project.Biz
                 sr.Close();
             }
 
-            result = result.Where(t=>Convert.ToInt32(t.Rate) > 10000).OrderBy(t => Convert.ToInt32(t.Rate)).ToList();
+            result = result.Where(t=>Convert.ToInt32(t.Rate) > 10000).ToList();
             result.ForEach(t =>
             {
                 t.Rate = Round(t.Rate);
