@@ -36,7 +36,10 @@ namespace Project
 
             for(int index=0;index < allData.Count / 12; index++)
             {
-                DataCache.Data.Add(index, allData.Skip(index * 12).Take(12).OrderBy(t=>t.Rate).ToList());
+                var data = allData.Skip(index * 12).Take(12).OrderBy(t => t.Rate).ToList();
+                int id = 0;
+                data.ForEach(d => d.Id = (id++).ToString());
+                DataCache.Data.Add(index, data);
             }
         }
     }
