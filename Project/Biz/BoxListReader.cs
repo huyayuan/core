@@ -31,24 +31,24 @@ namespace Project.Biz
                         Rate = RemoveQuotes(dataList[2]),
                         Url = RemoveQuotes(dataList[3])
                     };
-
-                    result.Add(box);
                     str = sr.ReadLine();
+                    result.Add(box);
                 }
 
                 sr.Close();
             }
 
-            result = result.Where(t=>Convert.ToInt32(t.Rate) > 10000).ToList();
+            result = result.Where(t => (!string.IsNullOrWhiteSpace(t.Comments) && Convert.ToInt32(t.Rate) > 1000) || (Convert.ToInt32(t.Rate) > 10000)).ToList();
             result.ForEach(t =>
             {
                 t.Rate = Round(t.Rate);
-                if(string.IsNullOrWhiteSpace(t.Comments))
+
+                if (string.IsNullOrWhiteSpace(t.Comments))
                 {
                     t.Comments = "...";
                 }
 
-                if(string.IsNullOrWhiteSpace(t.Title))
+                if (string.IsNullOrWhiteSpace(t.Title))
                 {
                     t.Title = "...";
                 }
@@ -60,7 +60,8 @@ namespace Project.Biz
 
         private static string Round(string rate)
         {
-            return rate.Substring(0, rate.Length - 4) + "." + rate[rate.Length - 4] + "万";
+            var number = Math.Round(Convert.ToDouble(rate) / 10000, 2);
+            return number.ToString() + " 万";
         }
 
         private static string RemoveQuotes(string original)

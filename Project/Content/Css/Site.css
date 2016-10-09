@@ -13,17 +13,17 @@ body {
 
 .header-color{
     background-color:#fad61f;
-    height:80px
+    height:90px
 }
 
 .logo{
-    display: block;
+    display: inline-block;
     height: 79px;
-    width: 207px;
+    width: 157px;
     text-indent: -999999px;
     background-position: 0 0;
-    background-image:url('../Images/logo_temp.png');
-    margin-left:20%
+    background-image:url('../Images/newlogo4.png');
+    margin-left:10%
 }
 
 .text-center{
