@@ -175,8 +175,12 @@
     <Compile Include="Models\BoxType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Biz\BoxListReader.cs" />
+    <Content Include="Content\Images\SiteName.png" />
     <Content Include="Content\Images\comment.png" />
     <Content Include="Content\Images\logo_temp.png" />
+    <Content Include="Content\Images\newlogo2.png" />
+    <Content Include="Content\Images\newlogo3.png" />
+    <Content Include="Content\Images\newlogo4.png" />
     <Content Include="Scripts\Js\lodash.js" />
     <Content Include="Scripts\Js\react-dom-15.0.1.js" />
     <Content Include="Scripts\Js\react-15.0.1.js" />
