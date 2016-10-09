@@ -17,6 +17,8 @@ namespace Project
 
     public class MvcApplication : System.Web.HttpApplication
     {
+        private const int DataCountPerPage = 13;
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -34,9 +36,9 @@ namespace Project
                 allData.AddRange(BoxListReader.GetData(fileName));
             }
 
-            for(int index=0;index < allData.Count / 12; index++)
+            for(int index=0;index < allData.Count / DataCountPerPage; index++)
             {
-                var data = allData.Skip(index * 12).Take(12).OrderBy(t => t.Rate).ToList();
+                var data = allData.Skip(index * DataCountPerPage).Take(DataCountPerPage).OrderBy(t => t.Rate).ToList();
                 int id = 0;
                 data.ForEach(d => d.Id = (id++).ToString());
                 DataCache.Data.Add(index, data);
