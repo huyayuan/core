@@ -31,7 +31,19 @@ namespace Project.Biz
                         Rate = RemoveQuotes(dataList[2]),
                         Url = RemoveQuotes(dataList[3])
                     };
+
+                    if(string.IsNullOrWhiteSpace(box.Rate))
+                    {
+                        box.Rate = "0";
+                    }
+
                     str = sr.ReadLine();
+                    int rate;
+                    if(!int.TryParse(box.Rate, out rate))
+                    {
+                        continue;
+                    }
+
                     result.Add(box);
                 }
 
@@ -66,6 +78,11 @@ namespace Project.Biz
 
         private static string RemoveQuotes(string original)
         {
+            if(original.Length == 1)
+            {
+                return original;
+            }
+
             if (string.IsNullOrWhiteSpace(original))
             {
                 return string.Empty;

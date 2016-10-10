@@ -26,7 +26,7 @@
 	<div>
 	    {boxList}
         <div id="change-content" className="w3-container w3-card-2 w3-white w3-round">
-             <button onClick={this.onClick} className="w3-btn w3-white text-center"><i className="fa fa-refresh"></i></button>
+             <button onClick={this.onClick} className="w3-btn w3-white text-center"><i className="fa fa-wheelchair-alt"></i> <span className="button-word">传送</span> </button>
         </div>
 	</div>
     );

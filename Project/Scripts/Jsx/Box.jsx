@@ -23,7 +23,7 @@
         var img = null;
 
         if (this.props.data.Type === 1) {
-            img = <img src={this.props.data.Url} style={{}} className="w3-margin-bottom width-100" />;
+            img = <img src={this.props.data.Url} style={{}} className="width-100" />;
         }
         var comments = null;
         if (this.props.data.Comments) {

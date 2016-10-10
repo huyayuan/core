@@ -175,6 +175,7 @@
     <Compile Include="Models\BoxType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Biz\BoxListReader.cs" />
+    <Content Include="Content\Images\logo_font.png" />
     <Content Include="Content\Images\SiteName.png" />
     <Content Include="Content\Images\comment.png" />
     <Content Include="Content\Images\logo_temp.png" />
@@ -287,6 +288,8 @@
     <Content Include="Data\201610082259.csv" />
     <Content Include="Data\201610092217.csv" />
     <Content Include="Data\201610092306.csv" />
+    <Content Include="Data\201610102056.csv" />
+    <Content Include="Data\201610102122.csv" />
     <None Include="Properties\PublishProfiles\23333 %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\23333 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\23333.pubxml" />
