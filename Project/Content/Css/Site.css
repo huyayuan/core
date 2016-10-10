@@ -53,3 +53,8 @@ body {
     color:#333;
     border:none
 }
+
+#content {
+    display: inline-block;
+    width: 50%;
+}
