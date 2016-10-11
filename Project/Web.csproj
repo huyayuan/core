@@ -182,6 +182,7 @@
     <Content Include="Content\Images\newlogo2.png" />
     <Content Include="Content\Images\newlogo3.png" />
     <Content Include="Content\Images\newlogo4.png" />
+    <Content Include="Scripts\Js\baidutongji.js" />
     <Content Include="Scripts\Js\lodash.js" />
     <Content Include="Scripts\Js\react-dom-15.0.1.js" />
     <Content Include="Scripts\Js\react-15.0.1.js" />

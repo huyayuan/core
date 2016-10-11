@@ -1,20 +1,25 @@
 ﻿var BoxList = React.createClass({
     getInitialState: function () {
-        return { boxList: [], index: 0};
+        return { boxList: []};
     },
     componentDidMount: function () {
+        $.AMUI.progress.start();
+
         $.ajax({
             url: "home/getdata?index=0", success: function (data) {
                 this.setState({ boxList: data });
+                $.AMUI.progress.done();
             }.bind(this)
         });
     },
     onClick: function () {
-        this.setState({ boxList: [] });
-        var index = this.state.index + 1;
+        console.log($.AMUI.progress);
+        $.AMUI.progress.start();
+
         $.ajax({
-            url: "home/getdata?index=" + index, success: function (data) {
-                this.setState({ boxList: data, index });
+            url: "home/getdata?index=1", success: function (data) {
+                this.setState({ boxList: data });
+                $.AMUI.progress.done();
             }.bind(this)
         });
     },
@@ -26,7 +31,7 @@
 	<div>
 	    {boxList}
         <div id="change-content" className="w3-container w3-card-2 w3-white w3-round">
-             <button onClick={this.onClick} className="w3-btn w3-white text-center"><i className="fa fa-wheelchair-alt"></i> <span className="button-word">传送</span> </button>
+             <button onClick={this.onClick} data-am-smooth-scroll="{position: 1}" className="w3-btn w3-white text-center am-btn am-btn-success"><i className="fa fa-wheelchair-alt"></i> <span className="button-word">传送</span> </button>
         </div>
 	</div>
     );

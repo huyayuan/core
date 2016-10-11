@@ -39,8 +39,7 @@ namespace Project
             for(int index=0;index < allData.Count / DataCountPerPage; index++)
             {
                 var data = allData.Skip(index * DataCountPerPage).Take(DataCountPerPage).OrderBy(t => t.Rate).ToList();
-                int id = 0;
-                data.ForEach(d => d.Id = (id++).ToString());
+                data.ForEach(d => d.Id = Guid.NewGuid().ToString());
                 DataCache.Data.Add(index, data);
             }
         }
