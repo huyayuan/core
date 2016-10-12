@@ -21,11 +21,11 @@
     <!-- Navbar -->
     <div class="w3-top header-color">
         <a class="logo" href="/"></a>
-        <img style="display:inline-block;margin-bottom:15px;margin-left:-10px;" src="~/Content/Images/logo_font.png" />
+        <img style="display:inline-block;margin-bottom: 0" src="~/Content/Images/new_font.PNG" />
     </div>
 
     <!-- Page Container -->
-    <div class="w3-container w3-content" style="max-width: 1400px; margin-top: 100px; min-height:990px">
+    <div class="w3-container w3-content" style="max-width: 1400px; margin-top: 100px; min-height:700px">
         <!-- The Grid -->
         <div class="w3-row">
             <!-- Left Column -->
@@ -60,7 +60,31 @@
 
     <!-- Footer -->
 <footer class="w3-container w3-orange w3-padding-16" style="text-align: center">
-    <div style="font-size: 12px; color: white">联系方式: ilove23333@163.com</div>
+    <div style="font-size: 12px; color: white">合作联系方式: ilove23333@163.com</div>
+    <a onclick="document.getElementById('feed_back').style.display = 'block'" style="color: red; font-weight: bold;text-decoration: none " href="#">有个好意见要提</a>
+
+    <div id="feed_back" class="w3-modal">
+        <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+            <div class="w3-center">
+                <br>
+                <span onclick="document.getElementById('feed_back').style.display = 'none'" class="w3-closebtn w3-hover-red w3-container w3-padding-8 w3-display-topright" title="关闭">×</span>
+                <img src="~/Content/Images/Logo.jpg" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+            </div>
+
+            <form class="w3-container" action="/home/feedback" method="post">
+                <div class="w3-section">
+                    <label><b>我的邮箱</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="在这里输入我的联系方式" name="contact" required>
+                    <label><b>我的建议</b></label>
+                    <textarea class="w3-input w3-border" placeholder="在这里输入我的建议" name="comment" required></textarea>
+                    <button class="w3-btn-block w3-green w3-section w3-padding" type="submit">提交</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
 </footer>
     @Scripts.Render("~/bundles/jsx")
 
@@ -68,10 +92,10 @@
     window._bd_share_config = {
         "common": {
             "bdSnsKey": {},
-            "bdText": "快來23333，有猛料！！！",
+            "bdText": "前方高能！有猛料~",
             "bdMini": "1",
             "bdMiniList": ["tsina", "weixin", "sqq", "tqq", "tqf", "youdao", "qzone", "copy"],
-            "bdPic": "http://p3.pstatp.com/large/ec60003408b0bbb25c0",
+            "bdPic": "",
             "bdStyle": "0",
             "bdSize": "16"
         },

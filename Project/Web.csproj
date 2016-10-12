@@ -176,6 +176,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Biz\BoxListReader.cs" />
     <Content Include="Content\Images\logo_font.png" />
+    <Content Include="Content\Images\new_font.PNG" />
     <Content Include="Content\Images\SiteName.png" />
     <Content Include="Content\Images\comment.png" />
     <Content Include="Content\Images\logo_temp.png" />
@@ -272,6 +273,7 @@
     <Content Include="Data\20160929.csv" />
     <Content Include="Data\20160928.csv" />
     <Content Include="Data\201610071002.csv" />
+    <Content Include="Database\Feedback.txt" />
     <None Include="Data\20160927.csv" />
     <Content Include="Data\201610072228.csv" />
     <Content Include="Data\201610072229.csv" />

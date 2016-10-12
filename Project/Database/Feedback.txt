@@ -1,0 +1,3 @@
+ÿþuser:aaa | comment:bbbb 
+user:zzzz | comment:bbbbbb 
+user:QQQQ | comment:AAAAAAA 

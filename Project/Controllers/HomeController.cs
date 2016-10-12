@@ -21,5 +21,32 @@ namespace Project.Controllers
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
+
+        [HttpPost]
+        public ActionResult Feedback(Feedback feedback)
+        {
+            System.IO.File.AppendAllText(HttpContext.Server.MapPath("~/Database/Feedback.txt"), string.Format("user:{0} | comment:{1} \n", feedback.Contact, feedback.Comment));
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult GetFeedback()
+        {
+            return new JsonResult()
+            {
+                Data =
+                    System.IO.File.ReadAllText(
+                        HttpContext.Server.MapPath("~/Database/Feedback.txt")),
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+    }
+
+
+    public class Feedback
+    {
+        public string Contact { get; set; }
+
+        public string Comment { get; set; }
     }
 }
