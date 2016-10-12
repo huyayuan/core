@@ -13,7 +13,7 @@ namespace Project.Controllers
         
         public ActionResult GetData(int index = 0)
         {
-            Random random = new Random(DateTime.Now.Millisecond);
+            Random random = new Random();
             var dataIndex = random.Next(0, DataCache.Data.Count - 1);
             return new JsonResult()
             {
