@@ -18,6 +18,7 @@
         $.ajax({
             url: "home/getdata", success: function (data) {
                 this.setState({ boxList: data });
+                window._bd_share_main.init();
                 $.AMUI.progress.done();
             }.bind(this)
         });

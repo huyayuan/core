@@ -183,6 +183,8 @@
     <Content Include="Content\Images\newlogo2.png" />
     <Content Include="Content\Images\newlogo3.png" />
     <Content Include="Content\Images\newlogo4.png" />
+    <None Include="Database\feedback" />
+    <Content Include="Scripts\Js\baidufenxiang.js" />
     <Content Include="Scripts\Js\baidutongji.js" />
     <Content Include="Scripts\Js\lodash.js" />
     <Content Include="Scripts\Js\react-dom-15.0.1.js" />
@@ -273,7 +275,6 @@
     <Content Include="Data\20160929.csv" />
     <Content Include="Data\20160928.csv" />
     <Content Include="Data\201610071002.csv" />
-    <Content Include="Database\Feedback.txt" />
     <None Include="Data\20160927.csv" />
     <Content Include="Data\201610072228.csv" />
     <Content Include="Data\201610072229.csv" />
