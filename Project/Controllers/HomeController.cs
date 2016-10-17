@@ -1,7 +1,9 @@
 ﻿using Project.Biz;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
@@ -66,7 +68,8 @@ namespace Project.Controllers
         [HttpPost]
         public ActionResult Feedback(Feedback feedback)
         {
-            System.IO.File.AppendAllText(HttpContext.Server.MapPath("~/Database/Feedback.txt"), string.Format("user:{0} | comment:{1} \n", feedback.Contact, feedback.Comment));
+
+
             return RedirectToAction("Index");
         }
 
