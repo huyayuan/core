@@ -6,7 +6,7 @@
         $.AMUI.progress.start();
 
         $.ajax({
-            url: "home/getdata?index=0", success: function (data) {
+            url: "home/getdata", success: function (data) {
                 this.setState({ boxList: data });
                 $.AMUI.progress.done();
             }.bind(this)
@@ -16,7 +16,7 @@
         $.AMUI.progress.start();
 
         $.ajax({
-            url: "home/getdata?index=1", success: function (data) {
+            url: "home/getdata", success: function (data) {
                 this.setState({ boxList: data });
                 $.AMUI.progress.done();
             }.bind(this)
