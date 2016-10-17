@@ -28,8 +28,7 @@ namespace Project
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            var dataPath = HttpContext.Current.Server.MapPath("~/Data/");
-            var filesName = Directory.EnumerateFiles(HttpContext.Current.Server.MapPath("~/Data/")).OrderByDescending(t=>t);
+            var filesName = Directory.EnumerateFiles(HttpContext.Current.Server.MapPath("~/Data/")).OrderBy(t=>t);
             List<Box> allData = new List<Box>();
             foreach (var fileName in filesName)
             {
