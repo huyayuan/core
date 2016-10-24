@@ -29,8 +29,14 @@ namespace Project.Biz
                         Title = RemoveQuotes(dataList[0]),
                         Comments = RemoveQuotes(dataList[1]),
                         Rate = RemoveQuotes(dataList[2]),
-                        Url = RemoveQuotes(dataList[3])
+                        Url = RemoveQuotes(dataList[3]),
                     };
+
+                    if (dataList.Length == 6)
+                    {
+                        box.Comment2 = RemoveQuotes(dataList[4]);
+                        box.Comment3 = RemoveQuotes(dataList[5]);
+                    }
 
                     if(string.IsNullOrWhiteSpace(box.Rate))
                     {
@@ -50,7 +56,7 @@ namespace Project.Biz
                 sr.Close();
             }
 
-            result = result.Where(t => (!string.IsNullOrWhiteSpace(t.Comments) && Convert.ToInt32(t.Rate) > 1000) || (Convert.ToInt32(t.Rate) > 10000)).ToList();
+            result = result.Where(t => (!string.IsNullOrWhiteSpace(t.Comments) && Convert.ToInt32(t.Rate) > 1000) || (Convert.ToInt32(t.Rate) > 5000)).ToList();
             result.ForEach(t =>
             {
                 t.Rate = Round(t.Rate);
@@ -72,8 +78,8 @@ namespace Project.Biz
 
         private static string Round(string rate)
         {
-            var number = Math.Round(Convert.ToDouble(rate) / 10000, 2);
-            return number.ToString() + " 万";
+            var number = Math.Round(Convert.ToDouble(rate) / 1000, 2);
+            return number + " k";
         }
 
         private static string RemoveQuotes(string original)

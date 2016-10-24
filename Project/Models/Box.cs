@@ -11,5 +11,9 @@
         public string Id { get; set; }
 
         public BoxType Type { get; set; }
+
+        public string Comment2 { get; set; }
+
+        public string Comment3 { get; set; }
     }
 }
