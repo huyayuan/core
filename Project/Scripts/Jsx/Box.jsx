@@ -26,6 +26,8 @@
             img = <img src={this.props.data.Url} style={{}} className="width-100" />;
         }
         var comments = null;
+        var comment2 = null;
+        var comment3 = null;
         if (this.props.data.Comments) {
             comments = (<div className="w3-panel w3-topbar w3-bottombar comments">
                     <p>
@@ -33,6 +35,23 @@
                     </p>
             </div>);
         }
+
+		if (this.props.data.Comment2) {
+            comment2 = (<div className="w3-panel w3-topbar w3-bottombar comments">
+                    <p>
+                        {this.props.data.Comment2}
+                    </p>
+            </div>);
+        }
+
+		if (this.props.data.Comment3) {
+            comment3 = (<div className="w3-panel w3-topbar w3-bottombar comments">
+                    <p>
+                        {this.props.data.Comment3}
+                    </p>
+            </div>);
+        }
+
         var rateClassName = "fa fa-thumbs-o-up";
         if (this.state.isRated)
         {
@@ -48,6 +67,8 @@
                 <p>{this.props.data.Title}</p>
             {img}
             {comments}
+			{comment2}
+			{comment3}
                   <button type="button" className="w3-btn w3-theme-d1 w3-margin-bottom" onClick={this.onClick}><i className={rateClassName}></i> {this.props.data.Rate} </button>
         </div>
     );
