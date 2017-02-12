@@ -36,7 +36,7 @@
     );
     }
 });
-ReactDOM.render(
+/*ReactDOM.render(
   <BoxList />,
   document.getElementById('content')
-);
+);*/

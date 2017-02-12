@@ -7,6 +7,15 @@ body {
     background-color:#f3f3f3
 }
 
+a:visited{
+    color:gray; 
+    text-decoration:none;
+}
+
+a{
+    color:red;
+}
+
 .width-100{
     width:100%;
 }
@@ -124,3 +133,4 @@ body {
             transform: rotate(360deg);
   }
 }
+

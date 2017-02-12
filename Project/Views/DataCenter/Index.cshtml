@@ -1,0 +1,12 @@
+﻿@using Project.Models
+@model List<AccountInfo>
+
+<ul>
+    <li style="list-style-type:none; font-weight:bold">Info</li>
+    @foreach (var info in Model)
+    {
+        <li>
+           <span style="width:50px">@info.Fee 元</span><span style="width:50px">@info.Value 分</span><a href="@info.Link" target="_blank">@info.Title</a> 
+        </li>
+    }
+</ul>
