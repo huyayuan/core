@@ -25,6 +25,7 @@ namespace Project
         private static readonly WebCrawler crawler = new WebCrawler("http://m.jiaoyimao.com/g4308-c1/r1.html?1477379608309687=%E6%9C%AA%E8%AE%A4%E8%AF%81%E8%BA%AB%E4%BB%BD%E8%AF%81&1478241856106497=%E7%BD%91%E6%98%93%E9%82%AE%E7%AE%B1%E5%B8%90%E5%8F%B7");
         private static readonly Analyzer analyzer = new Analyzer();
         private static List<string> LastRecords = new List<string>();
+        private static Random rd = new Random();
 
 
         protected void Application_Start()
@@ -69,19 +70,20 @@ namespace Project
                             builder.Append("<br/>");
                         }
 
-                        if(!string.IsNullOrWhiteSpace(builder.ToString()))
+                        if (!string.IsNullOrWhiteSpace(builder.ToString()))
                         {
-                            crawler.SendEmail(builder.ToString());
+                            crawler.SendEmail(result.First().Title, builder.ToString());
                         }
 
                         LastRecords = result.Select(t => t.Link).ToList();
                     }
                 }
-                catch
+                catch(Exception ex)
                 {
-                }
 
-                Thread.Sleep(30000);
+                }
+                
+                Thread.Sleep(5000);
             }
         }
 

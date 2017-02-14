@@ -271,44 +271,16 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Css\Site.css" />
     <Content Include="Content\Css\w3.css" />
-    <Content Include="Data\20161004.csv" />
-    <Content Include="Data\20161003.csv" />
-    <Content Include="Data\20161002.csv" />
-    <Content Include="Data\20161001.csv" />
-    <Content Include="Data\20161005.csv" />
-    <Content Include="Data\20161006.csv" />
-    <Content Include="Data\20161007.csv" />
-    <Content Include="Data\20161008.csv" />
-    <Content Include="Data\201610071001.csv" />
-    <Content Include="Data\20160931.csv" />
-    <Content Include="Data\20160930.csv" />
-    <Content Include="Data\20160929.csv" />
-    <Content Include="Data\20160928.csv" />
-    <Content Include="Data\201610071002.csv" />
-    <Content Include="Database\Feedback.txt" />
     <Content Include="DataCenter\3.csv" />
-    <None Include="Data\20160927.csv" />
-    <Content Include="Data\201610072228.csv" />
-    <Content Include="Data\201610072229.csv" />
-    <Content Include="Data\201610072230.csv" />
-    <Content Include="Data\201610072231.csv" />
-    <Content Include="Data\201610072232.csv" />
-    <Content Include="Data\201610072233.csv" />
-    <Content Include="Data\201610072234.csv" />
-    <Content Include="Data\201610072235.csv" />
-    <Content Include="Data\201610072236.csv" />
-    <Content Include="Data\201610082151.csv" />
-    <Content Include="Data\201610082100.csv" />
-    <Content Include="Data\201610082116.csv" />
-    <Content Include="Data\201610082205.csv" />
-    <Content Include="Data\201610082259.csv" />
-    <Content Include="Data\201610092217.csv" />
-    <Content Include="Data\201610092306.csv" />
-    <Content Include="Data\201610102056.csv" />
-    <Content Include="Data\201610102122.csv" />
-    <Content Include="Data\201610102203.csv" />
-    <Content Include="Data\201610112304.csv" />
     <Content Include="Data\201610122007.csv" />
+    <Content Include="Data\201610241230.csv" />
+    <Content Include="Data\201610241245.csv" />
+    <Content Include="Data\201610241324.csv" />
+    <Content Include="Data\201610241348.csv" />
+    <Content Include="Data\201610241401.csv" />
+    <Content Include="Data\201610241508.csv" />
+    <Content Include="Data\201610241531.csv" />
+    <Content Include="Data\neihan.csv" />
     <None Include="Properties\PublishProfiles\23333 %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\23333 %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\23333 - Web Deploy.pubxml" />
@@ -345,7 +317,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\DataCenter\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Database\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

@@ -170,7 +170,6 @@ namespace Project.Biz
         private List<AccountInfo> FilterByRules(List<AccountInfo> accountList)
         {
             var result = new List<AccountInfo>();
-
             var temp = accountList.Where(t => t.Fee > 15 && t.Fee < 350).ToList();
             foreach(var item in temp)
             {
@@ -187,42 +186,69 @@ namespace Project.Biz
                     continue;
                 }
 
-                if (item.Fee <= 300 && item.SRRCount >= 5)
+                //小于250, 5ssr
+                if (item.Fee <= 250 && item.SRRCount >= 5)
                 {
                     result.Add(item);
                     continue;
                 }
 
-                if (item.Fee <= 350 && item.SRRCount >= 6)
+                //小于300, 6ssr
+                if (item.Fee <= 300 && item.SRRCount >= 6)
                 {
                     result.Add(item);
                     continue;
                 }
 
+                if (item.Fee <= 350 && item.SRRCount >= 7)
+                {
+                    result.Add(item);
+                    continue;
+                }
+
+                //小于100,20级茨木
                 if (item.Fee < 100 && item.SSRList.Contains(SSR.CiMu) && item.Level > 20)
                 {
                     result.Add(item);
                     continue;
                 }
 
+                //小于200，茨木妖刀
                 if (item.Fee < 200 && item.SSRList.Contains(SSR.CiMu) && item.SSRList.Contains(SSR.YaoDao))
                 {
                     result.Add(item);
                     continue;
                 }
 
+                //小于200，茨木天狗
                 if (item.Fee < 200 && item.SSRList.Contains(SSR.CiMu) && item.SSRList.Contains(SSR.TianGou))
                 {
                     result.Add(item);
                     continue;
                 }
 
-                if(item.Fee < 250 && item.Star == 6 && (item.SSRList.Contains(SSR.CiMu) || item.SSRList.Contains(SSR.TianGou) || item.SSRList.Contains(SSR.YaoDao)))
+                //小于150，天狗妖刀
+                if (item.Fee < 150 && item.SSRList.Contains(SSR.TianGou) && item.SSRList.Contains(SSR.YaoDao))
                 {
                     result.Add(item);
                     continue;
                 }
 
+                //小于250,6星天狗或者妖刀
+                if (item.Fee < 250 && item.Star == 6 && (item.SSRList.Contains(SSR.CiMu) || item.SSRList.Contains(SSR.TianGou) || item.SSRList.Contains(SSR.YaoDao)))
+                {
+                    result.Add(item);
+                    continue;
+                }
+
+                //小于300,6星次木
+                if (item.Fee < 300 && item.Star == 6 && item.SSRList.Contains(SSR.CiMu))
+                {
+                    result.Add(item);
+                    continue;
+                }
+
+                //小于100,5星茨木或者天狗或者妖刀
                 if (item.Fee < 100 && item.Star == 5 && (item.SSRList.Contains(SSR.CiMu) || item.SSRList.Contains(SSR.TianGou) || item.SSRList.Contains(SSR.YaoDao)))
                 {
                     result.Add(item);
@@ -237,6 +263,11 @@ namespace Project.Biz
         {
             foreach (var account in accountList)
             {
+                account.Title = account.Title.Replace("准六", "五星");
+                account.Title = account.Title.Replace("准6", "五星");
+                account.Title = account.Title.Replace("半6", "五星");
+                account.Title = account.Title.Replace("半六", "五星");
+
                 account.Level = Convert.ToInt32(account.Title.Substring(1, account.Title.IndexOf("级") - 1));
 
                 foreach (var item in SSRCountDic)

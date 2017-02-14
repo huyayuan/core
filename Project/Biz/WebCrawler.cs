@@ -57,23 +57,23 @@ namespace Project.Biz
             return accountList;
         }
 
-        public void SendEmail(string content)
+        public void SendEmail(string title, string content)
         {
             var emailAcount = "huyayuanme@163.com";
             var emailPassword = "dxfjiangnan";
-            var reciver = "huyayuanme@163.com";
+            var reciver = "yayuanzhanghao@163.com";
             MailMessage message = new MailMessage();
             //设置发件人,发件人需要与设置的邮件发送服务器的邮箱一致
             MailAddress fromAddr = new MailAddress(emailAcount);
             message.From = fromAddr;
-            message.SubjectEncoding = Encoding.UTF8;
-            message.BodyEncoding = Encoding.UTF8;
+            //message.SubjectEncoding = Encoding.UTF8;
+            //message.BodyEncoding = Encoding.UTF8;
             message.Priority = MailPriority.High;
             //设置收件人,可添加多个,添加方法与下面的一样
             message.To.Add(reciver);
             message.IsBodyHtml = true;
             //设置邮件标题
-            message.Subject = "交易猫";
+            message.Subject = title;
             //设置邮件内容
             message.Body = content;
             //设置邮件发送服务器,服务器根据你使用的邮箱而不同,可以到相应的 邮箱管理后台查看,下面是QQ的
