@@ -53,6 +53,12 @@
     <Compile Include="GetHtmlContentTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project\Web.csproj">
+      <Project>{E0AF4F44-A5B5-4541-9A22-983F483BEE13}</Project>
+      <Name>Web</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

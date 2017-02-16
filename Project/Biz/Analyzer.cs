@@ -186,15 +186,15 @@ namespace Project.Biz
                     continue;
                 }
 
-                //小于250, 5ssr
-                if (item.Fee <= 250 && item.SRRCount >= 5)
+                //小于200, 5ssr
+                if (item.Fee <= 200 && item.SRRCount >= 5)
                 {
                     result.Add(item);
                     continue;
                 }
 
                 //小于300, 6ssr
-                if (item.Fee <= 300 && item.SRRCount >= 6)
+                if (item.Fee <= 250 && item.SRRCount >= 6)
                 {
                     result.Add(item);
                     continue;
@@ -234,15 +234,22 @@ namespace Project.Biz
                     continue;
                 }
 
-                //小于250,6星天狗或者妖刀
-                if (item.Fee < 250 && item.Star == 6 && (item.SSRList.Contains(SSR.CiMu) || item.SSRList.Contains(SSR.TianGou) || item.SSRList.Contains(SSR.YaoDao)))
+                //小于170,6星天狗或者妖刀
+                if (item.Fee < 170 && item.Star == 6 && (item.SSRList.Contains(SSR.TianGou) || item.SSRList.Contains(SSR.YaoDao)))
+                {
+                    result.Add(item);
+                    continue;
+                }
+
+                //小于150,6星
+                if (item.Fee < 150 && item.Star == 6)
                 {
                     result.Add(item);
                     continue;
                 }
 
                 //小于300,6星次木
-                if (item.Fee < 300 && item.Star == 6 && item.SSRList.Contains(SSR.CiMu))
+                if (item.Fee < 250 && item.Star == 6 && item.SSRList.Contains(SSR.CiMu))
                 {
                     result.Add(item);
                     continue;
@@ -268,7 +275,10 @@ namespace Project.Biz
                 account.Title = account.Title.Replace("半6", "五星");
                 account.Title = account.Title.Replace("半六", "五星");
 
-                account.Level = Convert.ToInt32(account.Title.Substring(1, account.Title.IndexOf("级") - 1));
+                if(account.Title.Contains("级】"))
+                {
+                    account.Level = Convert.ToInt32(account.Title.Substring(1, account.Title.IndexOf("级") - 1));
+                }
 
                 foreach (var item in SSRCountDic)
                 {

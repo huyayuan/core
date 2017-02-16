@@ -11,14 +11,14 @@ namespace Project.Biz
 {
     public class WebCrawler
     {
-        private string url;
+        protected string url;
 
         public WebCrawler(string url)
         {
             this.url = url;
         }
 
-        private static string GetHtmlStr(string url)
+        protected string GetHtmlStr(string url)
         {
             try
             {
@@ -34,7 +34,7 @@ namespace Project.Biz
             }
         }
 
-        public List<AccountInfo> GetLastAccount(int count)
+        public virtual List<AccountInfo> GetLastAccount(int count)
         {
             string htmlstr = GetHtmlStr(url);
             HtmlDocument doc = new HtmlDocument();
@@ -60,7 +60,7 @@ namespace Project.Biz
         public void SendEmail(string title, string content)
         {
             var emailAcount = "huyayuanme@163.com";
-            var emailPassword = "dxfjiangnan";
+            var emailPassword = "xxxxxx";
             var reciver = "yayuanzhanghao@163.com";
             MailMessage message = new MailMessage();
             //设置发件人,发件人需要与设置的邮件发送服务器的邮箱一致
