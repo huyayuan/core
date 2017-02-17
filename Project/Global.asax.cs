@@ -46,7 +46,7 @@ namespace Project
         private void GetAccountInfo()
         {
             Task.Factory.StartNew(jiaoyimao);
-            Task.Factory.StartNew(taoshouyou);
+            //Task.Factory.StartNew(taoshouyou);
         }
 
         public void jiaoyimao()

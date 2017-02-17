@@ -60,7 +60,7 @@ namespace Project.Biz
         public void SendEmail(string title, string content)
         {
             var emailAcount = "huyayuanme@163.com";
-            var emailPassword = "xxxxxx";
+            var emailPassword = "dxfjiangnan";
             var reciver = "yayuanzhanghao@163.com";
             MailMessage message = new MailMessage();
             //设置发件人,发件人需要与设置的邮件发送服务器的邮箱一致
@@ -73,7 +73,7 @@ namespace Project.Biz
             message.To.Add(reciver);
             message.IsBodyHtml = true;
             //设置邮件标题
-            message.Subject = title;
+            message.Subject = "a";
             //设置邮件内容
             message.Body = content;
             //设置邮件发送服务器,服务器根据你使用的邮箱而不同,可以到相应的 邮箱管理后台查看,下面是QQ的
