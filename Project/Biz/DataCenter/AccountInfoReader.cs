@@ -11,7 +11,6 @@ namespace Project.Biz
     public class AccountInfoReader
     {
         static Dictionary<string, double> heroDic = new Dictionary<string, double>();
-        static int NoMatchCount = 0;
         static int ErrorCount = 0;
 
         static Dictionary<string, SSRCount> SSRDic = new Dictionary<string, SSRCount>();
@@ -192,7 +191,7 @@ namespace Project.Biz
                         result.Add(info);
                         str = sr.ReadLine();
                     }
-                    catch(Exception ex)
+                    catch(Exception)
                     {
                         ErrorCount++;
                         str = sr.ReadLine();

@@ -180,7 +180,14 @@ namespace Project.Biz
                     continue;
                 }
 
-                if(item.Fee < 150 && item.SRRCount >= 4)
+                //有萌新
+                if (item.Fee < 200 && (item.Title.Contains("账号") || item.Title.Contains("阴阳师")))
+                {
+                    result.Add(item);
+                    continue;
+                }
+
+                if (item.Fee < 150 && item.SRRCount >= 4)
                 {
                     result.Add(item);
                     continue;

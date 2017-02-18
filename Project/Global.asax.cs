@@ -1,4 +1,5 @@
 ﻿using Project.Biz;
+using Project.Biz.DataCenter;
 using Project.Models;
 using System;
 using System.Collections.Generic;
@@ -38,9 +39,8 @@ namespace Project
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            CreateDataCache();
             GetAccountInfo();
+            CreateDataCache();
         }
 
         private void GetAccountInfo()
@@ -55,7 +55,7 @@ namespace Project
             {
                 try
                 {
-                    var result = crawler.GetLastAccount(13);
+                    var result = crawler.GetLastAccount(15);
                     result = analyzer.FilterAccountInfo(result);
 
                     if (result.Count > 0)
@@ -78,6 +78,8 @@ namespace Project
                             LastRecords = result.Select(t => t.Link).ToList();
                         }
                     }
+
+                    HealthCache.LastHeartBeatTime = DateTime.UtcNow.AddHours(8);
                 }
                 catch (Exception ex)
                 {

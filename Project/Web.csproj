@@ -176,9 +176,10 @@
     <Compile Include="Biz\DataCenter\AccountInfoCache.cs" />
     <Compile Include="Biz\DataCache.cs" />
     <Compile Include="Biz\DataCenter\AccountInfoReader.cs" />
+    <Compile Include="Biz\DataCenter\HealthCache.cs" />
     <Compile Include="Biz\TaoshouyouCrawler.cs" />
     <Compile Include="Biz\WebCrawler.cs" />
-    <Compile Include="Controllers\DataCenterController.cs" />
+    <Compile Include="Controllers\HealthCheckController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

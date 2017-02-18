@@ -36,12 +36,17 @@ namespace Project.Biz
 
         public virtual List<AccountInfo> GetLastAccount(int count)
         {
+            List<AccountInfo> accountList = new List<AccountInfo>();
             string htmlstr = GetHtmlStr(url);
+            if(string.IsNullOrWhiteSpace(htmlstr))
+            {
+                return accountList;
+            }
+
             HtmlDocument doc = new HtmlDocument();
             doc.LoadHtml(htmlstr);
             HtmlNode rootnode = doc.DocumentNode;
 
-            List<AccountInfo> accountList = new List<AccountInfo>();
             for (int index=1;index<=count;index++)
             {
                 AccountInfo account = new AccountInfo();
