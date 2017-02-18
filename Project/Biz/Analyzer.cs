@@ -181,7 +181,7 @@ namespace Project.Biz
                 }
 
                 //有萌新
-                if (item.Fee < 200 && (item.Title.Contains("账号") || item.Title.Contains("阴阳师")))
+                if (item.Fee < 230 && item.Fee > 40 && (item.Title.Contains("账号") || item.Title.Contains("阴阳师")))
                 {
                     result.Add(item);
                     continue;

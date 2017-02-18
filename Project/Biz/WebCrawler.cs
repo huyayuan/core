@@ -78,7 +78,7 @@ namespace Project.Biz
             message.To.Add(reciver);
             message.IsBodyHtml = true;
             //设置邮件标题
-            message.Subject = "a";
+            message.Subject = title;
             //设置邮件内容
             message.Body = content;
             //设置邮件发送服务器,服务器根据你使用的邮箱而不同,可以到相应的 邮箱管理后台查看,下面是QQ的

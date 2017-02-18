@@ -1,5 +1,6 @@
 ﻿using Project.Biz;
 using Project.Biz.DataCenter;
+using Project.Models.DataCenter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,11 @@ namespace Project.Controllers
         {
             return new JsonResult()
             {
-                Data = HealthCache.LastHeartBeatTime.ToString("yyyy-MM-dd HH:mm:ss"),
+                Data = new HealthCheckDto()
+                {
+                    LastHeartBeatTime = HealthCache.LastHeartBeatTime.ToString("yyyy-MM-dd HH:mm:ss"),
+                    LastEmailSentTime = HealthCache.LastEmailSentTime.ToString("yyyy-MM-dd HH:mm:ss"),
+                },
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }

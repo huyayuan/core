@@ -75,6 +75,7 @@ namespace Project
                         if (!string.IsNullOrWhiteSpace(builder.ToString()))
                         {
                             crawler.SendEmail(result.First().Title, builder.ToString());
+                            HealthCache.LastEmailSentTime = DateTime.UtcNow.AddHours(8);
                             LastRecords = result.Select(t => t.Link).ToList();
                         }
                     }

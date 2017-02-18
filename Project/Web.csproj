@@ -186,6 +186,7 @@
     </Compile>
     <Compile Include="Models\Box.cs" />
     <Compile Include="Models\BoxType.cs" />
+    <Compile Include="Models\DataCenter\HealthCheckDto.cs" />
     <Compile Include="Models\DataCenter\SSR.cs" />
     <Compile Include="Models\DataCenter\SSRCount.cs" />
     <Compile Include="Models\DataCenter\AccountInfo.cs" />
