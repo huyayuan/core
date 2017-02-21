@@ -13,25 +13,18 @@ namespace Project.Biz
     {
         protected string url;
 
+        protected WebClient client;
+
         public WebCrawler(string url)
         {
             this.url = url;
+            client = new WebClient();
+            client.Encoding = Encoding.UTF8;
         }
 
         protected string GetHtmlStr(string url)
         {
-            try
-            {
-                WebRequest rGet = WebRequest.Create(url);
-                WebResponse rSet = rGet.GetResponse();
-                Stream s = rSet.GetResponseStream();
-                StreamReader reader = new StreamReader(s, Encoding.UTF8);
-                return reader.ReadToEnd();
-            }
-            catch (WebException)
-            {
-                return null;
-            }
+            return client.DownloadString(url);
         }
 
         public virtual List<AccountInfo> GetLastAccount(int count)
@@ -54,7 +47,11 @@ namespace Project.Biz
                 string priceXpath = string.Format(@"/html/body/div[5]/dl/dd[{0}]/a/em", index);
                 string urlXpath = string.Format(@"/html/body/div[5]/dl/dd[{0}]/a", index);
                 account.Title = rootnode.SelectSingleNode(titleXpath).InnerText.Trim();
-                account.Fee = Convert.ToDouble(rootnode.SelectSingleNode(priceXpath).InnerText.Replace("￥", string.Empty));
+                if(rootnode.SelectSingleNode(priceXpath) != null && !string.IsNullOrWhiteSpace(rootnode.SelectSingleNode(priceXpath).InnerText))
+                {
+                    account.Fee = Convert.ToDouble(rootnode.SelectSingleNode(priceXpath).InnerText.Replace("￥", string.Empty));
+                }
+
                 account.Link = rootnode.SelectSingleNode(urlXpath).Attributes["href"].Value;
                 accountList.Add(account);
             }

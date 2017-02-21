@@ -23,8 +23,8 @@ namespace Project
     {
         private const int DataCountPerPage = 13;
 
-        private static readonly WebCrawler crawler = new WebCrawler("http://m.jiaoyimao.com/g4308-c1472811121511870/r1.html?lowerPrice=0&higherPrice=400&1477379608309687=%E6%9C%AA%E8%AE%A4%E8%AF%81%E8%BA%AB%E4%BB%BD%E8%AF%81&1478241856106497=%E7%BD%91%E6%98%93%E9%82%AE%E7%AE%B1%E5%B8%90%E5%8F%B7");
-        private static readonly WebCrawler taoshouyouCrawler = new TaoshouyouCrawler("http://www.taoshouyou.com/game/yinyangshi-3894-20-1/0-0-1-9-0-0-0-0-0-0-2-0-1?quotaid=0");
+        private static readonly WebCrawler crawler = new WebCrawler("http://m.jiaoyimao.com/g4308-c1472811121511870/r1.html?higherPrice=400&1477379608309687=%E6%9C%AA%E8%AE%A4%E8%AF%81%E8%BA%AB%E4%BB%BD%E8%AF%81&1478241856106497=%E7%BD%91%E6%98%93%E9%82%AE%E7%AE%B1%E5%B8%90%E5%8F%B7");
+        //private static readonly WebCrawler taoshouyouCrawler = new TaoshouyouCrawler("http://www.taoshouyou.com/game/yinyangshi-3894-20-1/0-0-1-9-0-0-0-0-0-0-2-0-1?quotaid=0");
 
         private static readonly Analyzer analyzer = new Analyzer();
         private static List<string> LastRecords = new List<string>();
@@ -46,7 +46,6 @@ namespace Project
         private void GetAccountInfo()
         {
             Task.Factory.StartNew(jiaoyimao);
-            //Task.Factory.StartNew(taoshouyou);
         }
 
         public void jiaoyimao()
@@ -63,20 +62,18 @@ namespace Project
                         StringBuilder builder = new StringBuilder();
                         foreach (var item in result)
                         {
-                            if (LastRecords.Contains(item.Link))
+                            if (!LastRecords.Contains(item.Link))
                             {
-                                continue;
+                                LastRecords.Add(item.Link);
+                                builder.Append(string.Format("<a href='{2}' target='_blank'> {0}￥ —— {1} </a> ", item.Fee, item.Title, item.Link));
+                                builder.Append("<br/>");
                             }
-
-                            builder.Append(string.Format("<a href='{2}' target='_blank'> {0}￥ —— {1} </a> ", item.Fee, item.Title, item.Link));
-                            builder.Append("<br/>");
                         }
 
                         if (!string.IsNullOrWhiteSpace(builder.ToString()))
                         {
                             crawler.SendEmail(result.First().Title, builder.ToString());
                             HealthCache.LastEmailSentTime = DateTime.UtcNow.AddHours(8);
-                            LastRecords = result.Select(t => t.Link).ToList();
                         }
                     }
 
@@ -94,54 +91,52 @@ namespace Project
                     }
                 }
 
-                Thread.Sleep(1000);
+                //Thread.Sleep(1000);
             }
         }
-        public void taoshouyou()
-        {
-            while (true)
-            {
-                try
-                {
-                    var result = taoshouyouCrawler.GetLastAccount(13);
-                    result = analyzer.FilterAccountInfo(result);
+        //public void taoshouyou()
+        //{
+        //    while (true)
+        //    {
+        //        try
+        //        {
+        //            var result = taoshouyouCrawler.GetLastAccount(15);
+        //            result = analyzer.FilterAccountInfo(result);
 
-                    if (result.Count > 0)
-                    {
-                        StringBuilder builder = new StringBuilder();
-                        foreach (var item in result)
-                        {
-                            if (LastRecords.Contains(item.Link))
-                            {
-                                continue;
-                            }
+        //            if (result.Count > 0)
+        //            {
+        //                StringBuilder builder = new StringBuilder();
+        //                foreach (var item in result)
+        //                {
+        //                    if (!LastRecords.Contains(item.Link))
+        //                    {
+        //                        LastRecords.Add(item.Link);
+        //                        builder.Append(string.Format("<a href='{2}' target='_blank'> {0}￥ —— {1} </a> ", item.Fee, item.Title, item.Link));
+        //                        builder.Append("<br/>");
+        //                    }
+        //                }
 
-                            builder.Append(string.Format("<a href='{2}' target='_blank'> {0}￥ —— {1} </a> ", item.Fee, item.Title, item.Link));
-                            builder.Append("<br/>");
-                        }
+        //                if (!string.IsNullOrWhiteSpace(builder.ToString()))
+        //                {
+        //                    crawler.SendEmail(result.First().Fee + "￥ - " + result.First().Title, builder.ToString());
+        //                }
+        //            }
 
-                        if (!string.IsNullOrWhiteSpace(builder.ToString()))
-                        {
-                            crawler.SendEmail(result.First().Title, builder.ToString());
-                            LastRecords = result.Select(t => t.Link).ToList();
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    try
-                    {
-                        crawler.SendEmail("error", ex.ToString() + "<br/>stack trace" + ex.StackTrace);
-                    }
-                    catch
-                    {
-                        continue;
-                    }
-                }
-
-                Thread.Sleep(5000);
-            }
-        }
+                  
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            try
+        //            {
+        //                crawler.SendEmail("error", ex.ToString() + "<br/>stack trace" + ex.StackTrace);
+        //            }
+        //            catch
+        //            {
+        //                continue;
+        //            }
+        //        }
+        //    }
+        //}
 
         private static void CreatAccountInfoCache()
         {

@@ -174,34 +174,34 @@ namespace Project.Biz
             foreach(var item in temp)
             {
                 #region Rules
-                if (item.Fee < 100 && item.SRRCount >= 3)
+                if (item.Fee < 120 && item.SRRCount >= 3)
                 {
                     result.Add(item);
                     continue;
                 }
 
                 //有萌新
-                if (item.Fee < 230 && item.Fee > 40 && (item.Title.Contains("账号") || item.Title.Contains("阴阳师")))
+                if (item.Fee <= 151 && item.Fee > 0 && (item.Title.Contains("账号") || item.Title.Contains("阴阳师")))
                 {
                     result.Add(item);
                     continue;
                 }
 
-                if (item.Fee < 150 && item.SRRCount >= 4)
+                if (item.Fee <= 170 && item.SRRCount >= 4)
                 {
                     result.Add(item);
                     continue;
                 }
 
                 //小于200, 5ssr
-                if (item.Fee <= 200 && item.SRRCount >= 5)
+                if (item.Fee <= 220 && item.SRRCount >= 5)
                 {
                     result.Add(item);
                     continue;
                 }
 
                 //小于300, 6ssr
-                if (item.Fee <= 250 && item.SRRCount >= 6)
+                if (item.Fee <= 270 && item.SRRCount >= 6)
                 {
                     result.Add(item);
                     continue;
@@ -214,56 +214,56 @@ namespace Project.Biz
                 }
 
                 //小于100,20级茨木
-                if (item.Fee < 100 && item.SSRList.Contains(SSR.CiMu) && item.Level > 20)
+                if (item.Fee <= 110 && item.SSRList.Contains(SSR.CiMu) && item.Level > 20)
                 {
                     result.Add(item);
                     continue;
                 }
 
                 //小于200，茨木妖刀
-                if (item.Fee < 200 && item.SSRList.Contains(SSR.CiMu) && item.SSRList.Contains(SSR.YaoDao))
+                if (item.Fee <= 210 && item.SSRList.Contains(SSR.CiMu) && item.SSRList.Contains(SSR.YaoDao))
                 {
                     result.Add(item);
                     continue;
                 }
 
                 //小于200，茨木天狗
-                if (item.Fee < 200 && item.SSRList.Contains(SSR.CiMu) && item.SSRList.Contains(SSR.TianGou))
+                if (item.Fee <= 210 && item.SSRList.Contains(SSR.CiMu) && item.SSRList.Contains(SSR.TianGou))
                 {
                     result.Add(item);
                     continue;
                 }
 
                 //小于150，天狗妖刀
-                if (item.Fee < 150 && item.SSRList.Contains(SSR.TianGou) && item.SSRList.Contains(SSR.YaoDao))
+                if (item.Fee <= 170 && item.SSRList.Contains(SSR.TianGou) && item.SSRList.Contains(SSR.YaoDao))
                 {
                     result.Add(item);
                     continue;
                 }
 
                 //小于170,6星天狗或者妖刀
-                if (item.Fee < 170 && item.Star == 6 && (item.SSRList.Contains(SSR.TianGou) || item.SSRList.Contains(SSR.YaoDao)))
+                if (item.Fee <= 190 && item.Star == 6 && (item.SSRList.Contains(SSR.TianGou) || item.SSRList.Contains(SSR.YaoDao)))
                 {
                     result.Add(item);
                     continue;
                 }
 
                 //小于150,6星
-                if (item.Fee < 150 && item.Star == 6)
+                if (item.Fee <= 170 && item.Star == 6)
                 {
                     result.Add(item);
                     continue;
                 }
 
                 //小于300,6星次木
-                if (item.Fee < 250 && item.Star == 6 && item.SSRList.Contains(SSR.CiMu))
+                if (item.Fee <= 250 && item.Star == 6 && item.SSRList.Contains(SSR.CiMu))
                 {
                     result.Add(item);
                     continue;
                 }
 
                 //小于100,5星茨木或者天狗或者妖刀
-                if (item.Fee < 100 && item.Star == 5 && (item.SSRList.Contains(SSR.CiMu) || item.SSRList.Contains(SSR.TianGou) || item.SSRList.Contains(SSR.YaoDao)))
+                if (item.Fee <= 100 && item.Star == 5 && (item.SSRList.Contains(SSR.CiMu) || item.SSRList.Contains(SSR.TianGou) || item.SSRList.Contains(SSR.YaoDao)))
                 {
                     result.Add(item);
                     continue;
