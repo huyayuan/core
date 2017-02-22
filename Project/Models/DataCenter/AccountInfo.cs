@@ -6,6 +6,8 @@ namespace Project.Models
     {
         public string Link { get; set; }
 
+        public string BuyLink { get; set; }
+
         public string Title { get; set; }
 
         public double Fee { get; set; }

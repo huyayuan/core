@@ -29,6 +29,7 @@ namespace Project
         private static readonly Analyzer analyzer = new Analyzer();
         private static List<string> LastRecords = new List<string>();
         private static Random rd = new Random();
+        private static long ErrorCount = 0;
 
 
         protected void Application_Start()
@@ -65,14 +66,14 @@ namespace Project
                             if (!LastRecords.Contains(item.Link))
                             {
                                 LastRecords.Add(item.Link);
-                                builder.Append(string.Format("<a href='{2}' target='_blank'> {0}￥ —— {1} </a> ", item.Fee, item.Title, item.Link));
+                                builder.Append(string.Format("<a href='{2}' target='_blank'> {0}￥ —— {1} </a> -> <a href='{3}' target='_blank'>直接买</a>", item.Fee, item.Title, item.Link, item.BuyLink));
                                 builder.Append("<br/>");
                             }
                         }
 
                         if (!string.IsNullOrWhiteSpace(builder.ToString()))
                         {
-                            crawler.SendEmail(result.First().Title, builder.ToString());
+                            crawler.SendEmail(result.First().Title + " -> " + result.First().Fee + "￥", builder.ToString());
                             HealthCache.LastEmailSentTime = DateTime.UtcNow.AddHours(8);
                         }
                     }
@@ -81,13 +82,18 @@ namespace Project
                 }
                 catch (Exception ex)
                 {
-                    try
+                    ErrorCount++;
+                    if(ErrorCount > 9)
                     {
-                        crawler.SendEmail("error", ex.ToString() + "<br/>stack trace" + ex.StackTrace);
-                    }
-                    catch
-                    {
-                        continue;
+                        try
+                        {
+                            crawler.SendEmail("error", ex.ToString() + "<br/>stack trace" + ex.StackTrace);
+                            ErrorCount = 0;
+                        }
+                        catch
+                        {
+                            continue;
+                        }
                     }
                 }
 

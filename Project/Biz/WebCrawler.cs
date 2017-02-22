@@ -3,6 +3,7 @@ using Project.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
@@ -53,6 +54,8 @@ namespace Project.Biz
                 }
 
                 account.Link = rootnode.SelectSingleNode(urlXpath).Attributes["href"].Value;
+                account.BuyLink = string.Format("https://m.jiaoyimao.com/buyer/{0}/waitPay", account.Link.Split('/').Last().Replace(".html", string.Empty));
+
                 accountList.Add(account);
             }
 

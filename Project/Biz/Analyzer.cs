@@ -268,6 +268,12 @@ namespace Project.Biz
                     result.Add(item);
                     continue;
                 }
+
+                if (item.Fee <= 300 && (item.SSRList.Contains(SSR.CiMu) && item.SSRList.Contains(SSR.TianGou) && item.SSRList.Contains(SSR.YaoDao)))
+                {
+                    result.Add(item);
+                    continue;
+                }
                 #endregion
             }
             return result;
