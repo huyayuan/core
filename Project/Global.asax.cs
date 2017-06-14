@@ -23,7 +23,7 @@ namespace Project
     {
         private const int DataCountPerPage = 13;
 
-        private static readonly WebCrawler crawler = new WebCrawler("http://m.jiaoyimao.com/g4308-c1472811121511870/r1.html?higherPrice=400&1477379608309687=%E6%9C%AA%E8%AE%A4%E8%AF%81%E8%BA%AB%E4%BB%BD%E8%AF%81&1478241856106497=%E7%BD%91%E6%98%93%E9%82%AE%E7%AE%B1%E5%B8%90%E5%8F%B7");
+        private static readonly WebCrawler crawler = new WebCrawler("https://m.jiaoyimao.com/g4308/r1.html?lowerPrice=50&higherPrice=300&1477379608309687=%E6%9C%AA%E8%AE%A4%E8%AF%81%E8%BA%AB%E4%BB%BD%E8%AF%81&1495024237674306=%E8%8C%A8%E6%9C%A8%E7%AB%A5%E5%AD%90&1478241856106497=%E7%BD%91%E6%98%93%E9%82%AE%E7%AE%B1%E5%B8%90%E5%8F%B7");
         //private static readonly WebCrawler taoshouyouCrawler = new TaoshouyouCrawler("http://www.taoshouyou.com/game/yinyangshi-3894-20-1/0-0-1-9-0-0-0-0-0-0-2-0-1?quotaid=0");
 
         private static readonly Analyzer analyzer = new Analyzer();

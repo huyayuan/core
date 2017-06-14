@@ -44,9 +44,9 @@ namespace Project.Biz
             for (int index=1;index<=count;index++)
             {
                 AccountInfo account = new AccountInfo();
-                string titleXpath = string.Format( @"/html/body/div[5]/dl/dd[{0}]/a/span[1]", index);
-                string priceXpath = string.Format(@"/html/body/div[5]/dl/dd[{0}]/a/em", index);
-                string urlXpath = string.Format(@"/html/body/div[5]/dl/dd[{0}]/a", index);
+                string titleXpath = string.Format(@"//*[@id='goodsList']/li[{0}]/a/div/div[1]", index);
+                string priceXpath = string.Format(@"//*[@id='goodsList']/li[{0}]/a/div/div[5]", index);
+                string urlXpath = string.Format(@"//*[@id='goodsList']/li[{0}]/a", index);
                 account.Title = rootnode.SelectSingleNode(titleXpath).InnerText.Trim();
                 if(rootnode.SelectSingleNode(priceXpath) != null && !string.IsNullOrWhiteSpace(rootnode.SelectSingleNode(priceXpath).InnerText))
                 {
@@ -85,6 +85,7 @@ namespace Project.Biz
             SmtpClient client = new SmtpClient("smtp.163.com", 25);
             //设置发送人的邮箱账号和密码
             client.Credentials = new NetworkCredential(emailAcount, emailPassword);
+            client.EnableSsl = true;
             //启用ssl,也就是安全发送
             //client.EnableSsl = true;
             //发送邮件
