@@ -28,6 +28,8 @@ namespace Project
 
         private static readonly Analyzer analyzer = new Analyzer();
         private static List<string> LastRecords = new List<string>();
+        private static List<AccountInfo> LastAccountInfo = new List<AccountInfo>();
+
         private static Random rd = new Random();
         private static long ErrorCount = 0;
 
@@ -56,7 +58,7 @@ namespace Project
                 try
                 {
                     var result = crawler.GetLastAccount(15);
-                    result = analyzer.FilterAccountInfo(result);
+                    //result = analyzer.FilterAccountInfo(result);
 
                     if (result.Count > 0)
                     {
@@ -74,6 +76,7 @@ namespace Project
                         if (!string.IsNullOrWhiteSpace(builder.ToString()))
                         {
                             crawler.SendEmail(result.First().Title + " -> " + result.First().Fee + "￥", builder.ToString());
+
                             HealthCache.LastEmailSentTime = DateTime.UtcNow.AddHours(8);
                         }
                     }
@@ -97,7 +100,7 @@ namespace Project
                     }
                 }
 
-                //Thread.Sleep(1000);
+                Thread.Sleep(2000);
             }
         }
         //public void taoshouyou()
@@ -128,7 +131,7 @@ namespace Project
         //                }
         //            }
 
-                  
+
         //        }
         //        catch (Exception ex)
         //        {
